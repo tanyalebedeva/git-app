@@ -1,0 +1,4 @@
+apiVersion: v2
+name: mafia-chart
+description: A Helm chart for the Mafia app
+version: 0.1.0

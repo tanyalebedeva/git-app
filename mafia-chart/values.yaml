@@ -1,0 +1,3 @@
+backendImage: mafia-backend:latest
+frontendImage: mafia-frontend:latest
+replicaCount: 1

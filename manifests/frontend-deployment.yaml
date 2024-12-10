@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mafia-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mafia-frontend
+  template:
+    metadata:
+      labels:
+        app: mafia-frontend
+    spec:
+      containers:
+      - name: mafia-frontend
+        image: mafia-frontend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80

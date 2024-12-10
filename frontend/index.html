@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Спортивная Мафия</title>
+</head>
+<body>
+    <h1>Добро пожаловать в Спортивную Мафию!</h1>
+    <button id="get-role">Получить роль</button>
+    <p id="role"></p>
+    <button id="podcast">Слушать подкаст</button>
+    <p id="podcast-link"></p>
+    <script>
+        document.getElementById("get-role").addEventListener("click", async () => {
+            const response = await fetch("http://localhost:5000/role");
+            const data = await response.json();
+            document.getElementById("role").innerText = `Ваша роль: ${data.role}`;
+        });
+
+        document.getElementById("podcast").addEventListener("click", async () => {
+            const response = await fetch("http://localhost:5000/podcast");
+            const data = await response.json();
+            document.getElementById("podcast-link").innerHTML = `<a href="${data.link}" target="_blank">https://mafmagiccolors.mave.digital/</a>`;
+        });
+    </script>
+</body>
+</html>
